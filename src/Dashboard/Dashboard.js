@@ -2,6 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import TotalGoals from '../TotalGoals/TotalGoals';
 import { Link } from 'react-router-dom';
+import CategoryList from '../CategoryList/CategoryList';
 
 class Dashboard extends React.Component {
 	render() {
@@ -25,18 +26,9 @@ class Dashboard extends React.Component {
 							className="name-search"
 							placeholder="Search goals by name"
 						/>
-						<select name="goal-category" id="goal-category">
-							<option value="" defaultValue="" selected>
-								Search by Category
-							</option>
-							<option value="get-fit">Get Fit</option>
-							<option value="nutrition">Nutrition</option>
-							<option value="personal-growth">Personal Growth</option>
-							<option value="learn-skill">Learn A Skill</option>
-							<option value="be-productive">Be Productive</option>
-							<option value="mindfulness">Mindfulness</option>
-							<option value="sleep">Sleep</option>
-						</select>
+
+						<CategoryList />
+						
 						<select name="goal-type" id="goal-type">
 							<option value="" defaultValue="">
 								Search by Type

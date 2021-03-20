@@ -1,7 +1,5 @@
 section.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 select#goal-type, select#goal-category, input.name-search {
@@ -17,29 +15,16 @@ button.add-one-time {
 }
 
 div.goals-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 5px;
-}
-
-li {
-  list-style-type: none;
-  border: 2px black solid;
-  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 [type=submit], button {
-  margin: 10px;
-}
-
-ul.goals-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-}
-
-li.item {
-  width: 75%;
-  text-align: center;
+  margin: 5px;
 }
 
 @media all and (min-width: 800px) {
@@ -52,5 +37,9 @@ li.item {
 
   button.add-one-time, button.add-recurring {
     margin-left: 10px;
+  }
+
+  div.goals-filter {
+    flex-direction: row;
   }
 }

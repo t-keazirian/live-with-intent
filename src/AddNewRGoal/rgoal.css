@@ -1,10 +1,11 @@
 h1.addgoal {
   padding-top: 50px;
+  text-align: center;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
+div.add-goal {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 label {
@@ -14,6 +15,8 @@ label {
 }
 
 section.goal-notes, section.goal-category, section.form-section, section.checkbox-section {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -31,8 +34,4 @@ section.checkbox-section {
   flex-wrap: wrap;
   margin: 10px;
   justify-content: center;
-}
-
-.days {
-  font-weight: lighter;
 }
