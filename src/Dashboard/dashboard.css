@@ -16,7 +16,6 @@ button.add-one-time {
 
 div.goals-filter {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   padding: 5px;
   margin-left: 15px;
