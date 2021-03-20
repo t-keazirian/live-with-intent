@@ -1,0 +1,56 @@
+section.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select#goal-type, select#goal-category, input.name-search {
+  margin: 5px;
+}
+
+button.add-recurring {
+  margin-top: 50px;
+}
+
+button.add-one-time {
+  margin-top: 15px;
+}
+
+div.goals-filter {
+  padding: 5px;
+}
+
+li {
+  list-style-type: none;
+  border: 2px black solid;
+  margin-bottom: 15px;
+}
+
+[type=submit], button {
+  margin: 10px;
+}
+
+ul.goals-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+li.item {
+  width: 75%;
+  text-align: center;
+}
+
+@media all and (min-width: 800px) {
+  section.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  button.add-one-time, button.add-recurring {
+    margin-left: 10px;
+  }
+}
