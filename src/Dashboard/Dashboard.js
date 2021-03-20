@@ -4,10 +4,6 @@ import TotalGoals from '../TotalGoals/TotalGoals';
 import { Link } from 'react-router-dom';
 
 class Dashboard extends React.Component {
-	// constructor() {
-	//   super()
-	// }
-
 	render() {
 		return (
 			<div className="dashboard">
@@ -30,7 +26,7 @@ class Dashboard extends React.Component {
 							placeholder="Search goals by name"
 						/>
 						<select name="goal-category" id="goal-category">
-							<option value="" defaultValue="" selected disabled>
+							<option value="" defaultValue="" selected>
 								Search by Category
 							</option>
 							<option value="get-fit">Get Fit</option>
@@ -42,7 +38,7 @@ class Dashboard extends React.Component {
 							<option value="sleep">Sleep</option>
 						</select>
 						<select name="goal-type" id="goal-type">
-							<option value="" defaultValue="" disabled>
+							<option value="" defaultValue="">
 								Search by Type
 							</option>
 							<option value="one-time">One-Time Goals</option>
@@ -52,7 +48,6 @@ class Dashboard extends React.Component {
 				</section>
 
 				<TotalGoals />
-
 			</div>
 		);
 	}

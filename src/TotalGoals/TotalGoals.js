@@ -7,29 +7,28 @@ class TotalGoals extends React.Component {
 				<header>
 					<h1>Total Goals</h1>
 				</header>
-				<section className="goals-container">
-					<ul className="goals-list">
-						<li className="item">
-							{/* link to specific goal */}
+				<div className="goals-container">
+					<div className="goals-list">
+						<div className="item">
 
 							<h2>Brush Teeth</h2>
-							<p>Brush teeth 2x per day</p>
+							<span>Brush teeth 2x per day</span>
 							<div className="button-container">
 								<button type="submit">Edit Goal</button>
 								<button type="submit">Delete Goal</button>
 							</div>
-						</li>
+						</div>
 
-						<li className="item">
+						<div className="item">
 							<h2>Journal</h2>
-							<p>Journal once per day</p>
+							<span>Journal once per day</span>
 							<div className="button-container">
 								<button type="submit">Edit Goal</button>
 								<button type="submit">Delete Goal</button>
 							</div>
-						</li>
-					</ul>
-				</section>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}

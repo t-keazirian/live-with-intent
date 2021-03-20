@@ -7,10 +7,6 @@ section {
   flex-direction: column;
 }
 
-h3 {
-  padding-right: 10px;
-}
-
 label {
   margin: 10px;
   font-weight: bold;
