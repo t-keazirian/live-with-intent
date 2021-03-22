@@ -1,7 +1,10 @@
 import React from 'react';
 import './totalgoals.css';
+import DeleteGoalBtn from '../DeleteGoal/DeleteGoalBtn';
+import EditGoalBtn from '../EditGoalBtn/EditGoalBtn';
 
-class TotalGoals extends React.Component {
+class TotalGoals extends React.Component {	
+
 	render() {
 		return (
 			<div className="total-goals">
@@ -16,8 +19,8 @@ class TotalGoals extends React.Component {
 								<span>Brush teeth 2x per day</span>
 							</div>
 							<div className="button-container">
-								<button type="submit">Edit</button>
-								<button type="submit">Delete</button>
+								<EditGoalBtn />
+								<DeleteGoalBtn />
 							</div>
 						</div>
 
@@ -30,12 +33,8 @@ class TotalGoals extends React.Component {
 								<span>Journal 1x per day</span>
 							</div>
 							<div className="button-container">
-								<button className="edit-goal-btn" type="submit">
-									Edit
-								</button>
-								<button className="delete-goal-btn" type="submit">
-									Delete
-								</button>
+								<EditGoalBtn />
+								<DeleteGoalBtn />
 							</div>
 						</div>
 					</div>
