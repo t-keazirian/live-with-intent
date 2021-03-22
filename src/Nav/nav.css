@@ -6,7 +6,7 @@ nav {
   right: 0;
   padding: 10px;
   background-color: #aaa;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .homepage-link {
