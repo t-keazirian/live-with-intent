@@ -5,7 +5,7 @@ class CategoryList extends React.Component {
 		return (
 			<div className="goal-category">
 				<select name="goal-category" id="goal-category" required>
-					<option value="" selected disabled>
+					<option value="" selected>
 						Choose Category
 					</option>
 					<option value="get-fit">Get Fit</option>

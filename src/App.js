@@ -3,18 +3,20 @@ import './App.css';
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer'
 import AddNewRGoal from './AddNewRGoal/AddNewRGoal';
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import AddNewOTGoal from './AddNewOTGoal/AddNewOTGoal';
 import Dashboard from './Dashboard/Dashboard';
 import LandingPage from './LandingPage/LandingPage';
+import NotFound from './NotFound/NotFound';
 
 function App() {
   return (
+    <div className='main-app'>
     <main className='App'>
-      <Route 
-        path='/'
-        component={Nav}
-      />
+    <nav>
+      <Nav />
+    </nav>
+    <Switch>
       <Route 
         exact path='/'
         component={LandingPage}
@@ -32,10 +34,14 @@ function App() {
         component={AddNewOTGoal}
       />
       <Route 
-        path='/'
-        component={Footer}
+        component={NotFound}
       />
+      </Switch>
     </main>
+    <footer>
+      <Footer />
+    </footer>
+    </div>
   );
 }
 

@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
 						/>
 
 						<CategoryList />
-						
+
 						<select name="goal-type" id="goal-type">
 							<option value="" defaultValue="">
 								Search by Type

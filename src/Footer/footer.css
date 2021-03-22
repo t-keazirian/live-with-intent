@@ -4,5 +4,8 @@ footer {
   background-color: #aaa;
   padding: 10px;
   width: 100%;
+  align-items: flex-end;
 }
+
+
 

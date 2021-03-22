@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard snapshot renders the UI as expected 1`] = `
+<div
+  className="dashboard"
+>
+  <section
+    className="buttons"
+  >
+    <a
+      href="/add-new-recurring"
+      onClick={[Function]}
+    >
+      <button
+        className="add-recurring"
+      >
+        Add Recurring Goal
+      </button>
+    </a>
+    <a
+      href="/add-new-onetime"
+      onClick={[Function]}
+    >
+      <button
+        className="add-one-time"
+      >
+        Add One-Time Goal
+      </button>
+    </a>
+  </section>
+  <section
+    className="goal-summary-container"
+  >
+    <div
+      className="goal-summary"
+    >
+      <h3
+        className="goal-header"
+      >
+        Viewing __ Total Goals
+      </h3>
+    </div>
+    <div
+      className="goals-filter"
+    >
+      <input
+        className="name-search"
+        placeholder="Search goals by name"
+        type="text"
+      />
+      <div
+        className="goal-category"
+      >
+        <select
+          id="goal-category"
+          name="goal-category"
+          required={true}
+        >
+          <option
+            selected={true}
+            value=""
+          >
+            Choose Category
+          </option>
+          <option
+            value="get-fit"
+          >
+            Get Fit
+          </option>
+          <option
+            value="nutrition"
+          >
+            Nutrition
+          </option>
+          <option
+            value="personal-growth"
+          >
+            Personal Growth
+          </option>
+          <option
+            value="learn-skill"
+          >
+            Learn A Skill
+          </option>
+          <option
+            value="be-productive"
+          >
+            Be Productive
+          </option>
+          <option
+            value="mindfulness"
+          >
+            Mindfulness
+          </option>
+          <option
+            value="sleep"
+          >
+            Sleep
+          </option>
+        </select>
+      </div>
+      <select
+        id="goal-type"
+        name="goal-type"
+      >
+        <option
+          defaultValue=""
+          value=""
+        >
+          Search by Type
+        </option>
+        <option
+          value="one-time"
+        >
+          One-Time Goals
+        </option>
+        <option
+          value="recurring"
+        >
+          Recurring Goals
+        </option>
+      </select>
+    </div>
+  </section>
+  <div
+    className="total-goals"
+  >
+    <div
+      className="goals-container"
+    >
+      <div
+        className="goals-list"
+      >
+        <div
+          className="goal-item"
+        >
+          <h2
+            className="goals-header"
+          >
+            Brush Teeth
+          </h2>
+          <div>
+            <span
+              className="category"
+            >
+              Get Fit
+            </span>
+          </div>
+          <div
+            className="goal-note"
+          >
+            <span>
+              Brush teeth 2x per day
+            </span>
+          </div>
+          <div
+            className="button-container"
+          >
+            <button
+              type="submit"
+            >
+              Edit
+            </button>
+            <button
+              type="submit"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+        <div
+          className="goal-item"
+        >
+          <h2
+            className="goals-header"
+          >
+            Journal
+          </h2>
+          <div>
+            <span
+              className="category"
+            >
+              Personal Growth
+            </span>
+          </div>
+          <div
+            className="goal-note"
+          >
+            <span>
+              Journal 1x per day
+            </span>
+          </div>
+          <div
+            className="button-container"
+          >
+            <button
+              className="edit-goal-btn"
+              type="submit"
+            >
+              Edit
+            </button>
+            <button
+              className="delete-goal-btn"
+              type="submit"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
