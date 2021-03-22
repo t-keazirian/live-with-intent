@@ -1,15 +1,18 @@
-div.goals-list {
-  display: flex;
-  flex-direction: column;
+section.goal-summary-container, h1.total, .goal-item {
+  text-align: center;
 }
 
-section.goal-summary-container, h1.total {
-  text-align: center;
+ul {
+  padding: 0;
+}
+
+li.goal-item {
+  list-style-type: none;
 }
 
 h2.goals-header {
   padding-left: 10px;
-  text-align: start;
+  text-align: center;
 }
 
 div.goal-item {
@@ -29,12 +32,19 @@ div.button-container {
 @media all and (min-width: 800px) {
   div.goal-item {
     flex-direction: row;
-    justify-content: space-between;
-    margin-left: 30px;
-    margin-right: 30px;
+    justify-content: space-evenly;
+    /* margin-left: 30px;
+    margin-right: 30px; */
+    width: 75%;
   }
+
   div.button-container {
     flex-direction: column;
+    align-content: flex-end;
+  }
+
+  li.goal-item {
+    flex-direction: row;
   }
 }
 

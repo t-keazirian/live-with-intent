@@ -5,15 +5,13 @@ import { Link } from 'react-router-dom';
 import CategoryList from '../CategoryList/CategoryList';
 
 class Dashboard extends React.Component {
+
 	render() {
 		return (
 			<div className="dashboard">
 				<section className="buttons">
-					<Link to="/add-new-recurring">
-						<button className="add-recurring">Add Recurring Goal</button>
-					</Link>
-					<Link to="/add-new-onetime">
-						<button className="add-one-time">Add One-Time Goal</button>
+					<Link to="/add-new-goal">
+						<button className="add-one-time">Add Goal</button>
 					</Link>
 				</section>
 				<section className="goal-summary-container">
@@ -29,13 +27,6 @@ class Dashboard extends React.Component {
 
 						<CategoryList />
 
-						<select name="goal-type" id="goal-type">
-							<option value="" defaultValue="">
-								Search by Type
-							</option>
-							<option value="one-time">One-Time Goals</option>
-							<option value="recurring">Recurring Goals</option>
-						</select>
 					</div>
 				</section>
 

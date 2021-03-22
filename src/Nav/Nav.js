@@ -6,10 +6,10 @@ class Nav extends React.Component {
 
 	render() {
 		return (
-			<nav className="nav">
+			<div className="nav">
 				<Link to="/">Live With Intent</Link>
 				<Link to="/dashboard">Dashboard</Link>
-			</nav>
+			</div>
 		);
 	}
 }

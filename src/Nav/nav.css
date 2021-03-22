@@ -1,4 +1,4 @@
-nav {
+div.nav {
   display: flex;
   position: fixed;
   top: 0;
@@ -14,7 +14,7 @@ nav {
 }
 
 @media all and (min-width: 800px) {
-  nav {
+  div.nav {
     display: flex;
     justify-content: space-around;
   }
