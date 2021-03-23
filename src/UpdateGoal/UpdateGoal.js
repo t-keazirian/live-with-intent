@@ -34,8 +34,8 @@ class UpdateGoal extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { goalName, category, notes } = this.state;
-		const newGoal = { goalName, category, notes };
+		// const { goalName, category, notes } = this.state;
+		// const newGoal = { goalName, category, notes };
     console.log('clicked');
 	};
 
