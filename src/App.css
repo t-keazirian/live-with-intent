@@ -22,3 +22,7 @@ div.error {
   padding-top: 5px;
   color: red;
 }
+
+div.one-goal-item {
+  margin-top: 60px;
+}

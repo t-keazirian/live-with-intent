@@ -8,6 +8,7 @@ import Dashboard from './Dashboard/Dashboard';
 import LandingPage from './LandingPage/LandingPage';
 import NotFound from './NotFound/NotFound';
 import UpdateGoal from './UpdateGoal/UpdateGoal';
+import Goal from './Goal/Goal';
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
       <Route 
         path='/edit-goal'
         component={UpdateGoal}
+      />
+      <Route 
+        path='/goal/:id'
+        component={Goal}
       />
       <Route 
         component={NotFound}
