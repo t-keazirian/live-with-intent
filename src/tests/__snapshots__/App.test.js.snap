@@ -8,23 +8,13 @@ exports[`Dashboard snapshot renders the UI as expected 1`] = `
     className="buttons"
   >
     <a
-      href="/add-new-recurring"
-      onClick={[Function]}
-    >
-      <button
-        className="add-recurring"
-      >
-        Add Recurring Goal
-      </button>
-    </a>
-    <a
-      href="/add-new-onetime"
+      href="/add-new-goal"
       onClick={[Function]}
     >
       <button
         className="add-one-time"
       >
-        Add One-Time Goal
+        Add Goal
       </button>
     </a>
   </section>
@@ -37,7 +27,9 @@ exports[`Dashboard snapshot renders the UI as expected 1`] = `
       <h3
         className="goal-header"
       >
-        Viewing __ Total Goals
+        Viewing 
+        5
+         Total Goals
       </h3>
     </div>
     <div
@@ -45,6 +37,7 @@ exports[`Dashboard snapshot renders the UI as expected 1`] = `
     >
       <input
         className="name-search"
+        onChange={[Function]}
         placeholder="Search goals by name"
         type="text"
       />
@@ -52,12 +45,11 @@ exports[`Dashboard snapshot renders the UI as expected 1`] = `
         className="goal-category"
       >
         <select
+          defaultValue=""
           id="goal-category"
           name="goal-category"
-          required={true}
         >
           <option
-            selected={true}
             value=""
           >
             Choose Category
@@ -76,6 +68,11 @@ exports[`Dashboard snapshot renders the UI as expected 1`] = `
             value="personal-growth"
           >
             Personal Growth
+          </option>
+          <option
+            value="health"
+          >
+            Health
           </option>
           <option
             value="learn-skill"
@@ -99,27 +96,6 @@ exports[`Dashboard snapshot renders the UI as expected 1`] = `
           </option>
         </select>
       </div>
-      <select
-        id="goal-type"
-        name="goal-type"
-      >
-        <option
-          defaultValue=""
-          value=""
-        >
-          Search by Type
-        </option>
-        <option
-          value="one-time"
-        >
-          One-Time Goals
-        </option>
-        <option
-          value="recurring"
-        >
-          Recurring Goals
-        </option>
-      </select>
     </div>
   </section>
   <div
@@ -131,82 +107,258 @@ exports[`Dashboard snapshot renders the UI as expected 1`] = `
       <div
         className="goals-list"
       >
-        <div
-          className="goal-item"
-        >
-          <h2
-            className="goals-header"
+        <ul>
+          <div
+            className="goal-item"
           >
-            Brush Teeth
-          </h2>
-          <div>
-            <span
-              className="category"
+            <li
+              className="list-goal-item"
             >
-              Get Fit
-            </span>
+              <a
+                href="/goal/1"
+                onClick={[Function]}
+              >
+                <h2
+                  className="goals-header"
+                >
+                  Brush Teeth
+                </h2>
+              </a>
+              <p
+                className="category"
+              >
+                Health
+              </p>
+              <p
+                className="goal-note"
+              >
+                brush teeth 2x per day
+              </p>
+            </li>
+            <div
+              className="button-container"
+            >
+              <a
+                href="/edit-goal"
+                onClick={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Edit
+                </button>
+              </a>
+              <button
+                className="delete-goal-btn"
+                onClick={[Function]}
+                type="submit"
+              >
+                Delete
+              </button>
+            </div>
           </div>
           <div
-            className="goal-note"
+            className="goal-item"
           >
-            <span>
-              Brush teeth 2x per day
-            </span>
+            <li
+              className="list-goal-item"
+            >
+              <a
+                href="/goal/2"
+                onClick={[Function]}
+              >
+                <h2
+                  className="goals-header"
+                >
+                  Journal
+                </h2>
+              </a>
+              <p
+                className="category"
+              >
+                Personal Growth
+              </p>
+              <p
+                className="goal-note"
+              >
+                journal 2x per day
+              </p>
+            </li>
+            <div
+              className="button-container"
+            >
+              <a
+                href="/edit-goal"
+                onClick={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Edit
+                </button>
+              </a>
+              <button
+                className="delete-goal-btn"
+                onClick={[Function]}
+                type="submit"
+              >
+                Delete
+              </button>
+            </div>
           </div>
           <div
-            className="button-container"
+            className="goal-item"
           >
-            <button
-              type="submit"
+            <li
+              className="list-goal-item"
             >
-              Edit
-            </button>
-            <button
-              type="submit"
+              <a
+                href="/goal/3"
+                onClick={[Function]}
+              >
+                <h2
+                  className="goals-header"
+                >
+                  Take a walk
+                </h2>
+              </a>
+              <p
+                className="category"
+              >
+                Get Fit
+              </p>
+              <p
+                className="goal-note"
+              >
+                walk around the park with the dog
+              </p>
+            </li>
+            <div
+              className="button-container"
             >
-              Delete
-            </button>
-          </div>
-        </div>
-        <div
-          className="goal-item"
-        >
-          <h2
-            className="goals-header"
-          >
-            Journal
-          </h2>
-          <div>
-            <span
-              className="category"
-            >
-              Personal Growth
-            </span>
+              <a
+                href="/edit-goal"
+                onClick={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Edit
+                </button>
+              </a>
+              <button
+                className="delete-goal-btn"
+                onClick={[Function]}
+                type="submit"
+              >
+                Delete
+              </button>
+            </div>
           </div>
           <div
-            className="goal-note"
+            className="goal-item"
           >
-            <span>
-              Journal 1x per day
-            </span>
+            <li
+              className="list-goal-item"
+            >
+              <a
+                href="/goal/4"
+                onClick={[Function]}
+              >
+                <h2
+                  className="goals-header"
+                >
+                  Eat more veggies
+                </h2>
+              </a>
+              <p
+                className="category"
+              >
+                Get Fit
+              </p>
+              <p
+                className="goal-note"
+              >
+                add more veggies to every meal
+              </p>
+            </li>
+            <div
+              className="button-container"
+            >
+              <a
+                href="/edit-goal"
+                onClick={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Edit
+                </button>
+              </a>
+              <button
+                className="delete-goal-btn"
+                onClick={[Function]}
+                type="submit"
+              >
+                Delete
+              </button>
+            </div>
           </div>
           <div
-            className="button-container"
+            className="goal-item"
           >
-            <button
-              className="edit-goal-btn"
-              type="submit"
+            <li
+              className="list-goal-item"
             >
-              Edit
-            </button>
-            <button
-              className="delete-goal-btn"
-              type="submit"
+              <a
+                href="/goal/5"
+                onClick={[Function]}
+              >
+                <h2
+                  className="goals-header"
+                >
+                  Study computer science
+                </h2>
+              </a>
+              <p
+                className="category"
+              >
+                Learn a skill
+              </p>
+              <p
+                className="goal-note"
+              >
+                study for 20 min per day
+              </p>
+            </li>
+            <div
+              className="button-container"
             >
-              Delete
-            </button>
+              <a
+                href="/edit-goal"
+                onClick={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Edit
+                </button>
+              </a>
+              <button
+                className="delete-goal-btn"
+                onClick={[Function]}
+                type="submit"
+              >
+                Delete
+              </button>
+            </div>
           </div>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
