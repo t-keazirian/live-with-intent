@@ -14,7 +14,7 @@ class LandingPage extends React.Component {
 						<h3>Experience Living With Intention</h3>
 					</header>
 					<p>
-						[<em>placeholder for screenshot of goal tracker interface</em>]
+						[<em>Click <strong>Dashboard</strong> above to try it out!</em>]
 					</p>
 					<p>
 						Do you have a never ending list of goals or ambitions in your head?

@@ -4,14 +4,21 @@ section.date {
   align-items: center;
   padding-bottom: 20px;
 }
-h1.addgoal {
+h1.addgoal, h1.edit-goal {
   padding-top: 30px;
   text-align: center;
 }
 
 div.add-goal {
   text-align: center;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div.edit-goal {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 label {

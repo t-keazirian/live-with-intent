@@ -20,35 +20,30 @@ class AddNewGoal extends React.Component {
 		};
 	}
 
-	handleClickAddGoal = e => {
+	handleSubmit = e => {
 		e.preventDefault();
 		const { goalName, category, notes } = this.state;
-		if (category === '') {
-			console.log(`don't submit`);
-		} else {
-			console.log(category);
-			console.log(goalName);
-			console.log(notes);
+		alert(`Goal submitted: name: ${goalName.value}, category: ${category.value}, notes: ${notes.value}`)
 
 			// clear the fields after successful submit
-			this.setState({
-				goalName: {
-					value: '',
-					touched: false
-				},
-				category: {
-					value: '',
-					touched: false
-				},
-				notes: {
-					value: '',
-					touched: false
-				}
-			});
-		}
-		// bring user back to dashboard after goal submit
-		this.props.history.push('/dashboard');
-	};
+			// this.setState({
+			// 	goalName: {
+			// 		value: '',
+			// 		touched: false
+			// 	},
+			// 	category: {
+			// 		value: '',
+			// 		touched: false
+			// 	},
+			// 	notes: {
+			// 		value: '',
+			// 		touched: false
+			// 	}
+			// });
+
+			// bring user back to dashboard after goal submit
+			this.props.history.push('/dashboard');
+	}
 
 	handleGoalNameChange = goalName => {
 		this.setState({
@@ -91,7 +86,12 @@ class AddNewGoal extends React.Component {
 		}
 	}
 
+	handleCancel = () => {
+		this.props.history.push('/dashboard');
+	};
+
 	render() {
+		const {goalName, category, notes} = this.state;
 		const nameError = this.validateGoalName();
 		const categoryError = this.validateCategory();
 
@@ -101,7 +101,10 @@ class AddNewGoal extends React.Component {
 					<h1 className="addgoal">New Goal</h1>
 				</header>
 				<section>
-					<form className="add-goal-form">
+					<form 
+						className="add-goal-form"
+						onSubmit={e => this.handleSubmit(e)}
+					>
 						<section className="form-section">
 							<label htmlFor="goal-name">Goal:</label>
 							<input
@@ -109,6 +112,7 @@ class AddNewGoal extends React.Component {
 								name="goal-name"
 								id="goal-name"
 								placeholder="new goal"
+								value={goalName.value}
 								onChange={e => this.handleGoalNameChange(e.target.value)}
 								required
 							/>
@@ -123,6 +127,7 @@ class AddNewGoal extends React.Component {
 									name="goal-category"
 									id="goal-category"
 									onChange={e => this.handleCategoryChange(e.target.value)}
+									value={category.value}
 								>
 									<option value="">Choose Category</option>
 									<option value="get-fit">Get Fit</option>
@@ -146,12 +151,19 @@ class AddNewGoal extends React.Component {
 								maxLength="75"
 								placeholder="optional notes"
 								onChange={e => this.handleNotesChange(e.target.value)}
+								value={notes.value}
 							></textarea>
 						</section>
 			
 						<div className="add-goal">
-							<button type="submit" onClick={e => this.handleClickAddGoal(e)}>
+							<button 
+							type="submit" 
+							disabled={this.validateCategory() || this.validateGoalName()}
+							>
 								Add New Goal
+							</button>
+							<button className="go-back" onClick={this.handleCancel}>
+								Cancel
 							</button>
 						</div>
 					</form>

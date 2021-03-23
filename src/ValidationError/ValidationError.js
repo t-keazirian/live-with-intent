@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default function ValidationError(props) {
@@ -9,4 +10,8 @@ export default function ValidationError(props) {
     )
   }
   return <></>
+}
+
+ValidationError.propTypes = {
+  message: PropTypes.string
 }

@@ -13,10 +13,3 @@ div.nav {
   text-align: start;
 }
 
-@media all and (min-width: 800px) {
-  div.nav {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-

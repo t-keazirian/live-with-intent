@@ -7,11 +7,12 @@ import AddNewOTGoal from './AddNewGoal/AddNewGoal';
 import Dashboard from './Dashboard/Dashboard';
 import LandingPage from './LandingPage/LandingPage';
 import NotFound from './NotFound/NotFound';
+import UpdateGoal from './UpdateGoal/UpdateGoal';
 
 function App() {
   return (
-    <div className='main-app'>
-    <main className='App'>
+    <div className='app'>
+    <main className='main-app'>
     <nav>
       <Nav />
     </nav>
@@ -27,6 +28,10 @@ function App() {
       <Route 
         path='/add-new-goal'
         component={AddNewOTGoal}
+      />
+      <Route 
+        path='/edit-goal'
+        component={UpdateGoal}
       />
       <Route 
         component={NotFound}
