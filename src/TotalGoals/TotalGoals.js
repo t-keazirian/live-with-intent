@@ -13,7 +13,7 @@ class TotalGoals extends React.Component {
 					<div className="goals-list">
 						<ul>
 							{this.context.goals.map(goal => (
-								<IndvGoal goal={goal}/>
+								<IndvGoal goal={goal} key={goal.id}/>
 							))}
 						</ul>
 					</div>

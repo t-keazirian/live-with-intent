@@ -28,11 +28,11 @@ class Goal extends React.Component {
 							<h2 className="goals-header">{oneGoal.goalName}</h2>
 							<div className="category-div">
 								<h4>Category:</h4>
-								<span className="category">{oneGoal.category}</span>
+								<p className="category">{oneGoal.category}</p>
 							</div>
 							<div className="note-div">
 								<h4>Notes:</h4>
-								<span className="goal-note">{oneGoal.notes}</span>
+								<p className="goal-note">{oneGoal.notes}</p>
 							</div>
 							<div className="button-container">
 								<Link to={`/edit-goal/${oneGoal.id}`}>

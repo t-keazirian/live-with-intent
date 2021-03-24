@@ -3,20 +3,23 @@ import './dashboard.css';
 import TotalGoals from '../TotalGoals/TotalGoals';
 import { Link } from 'react-router-dom';
 import CategoryList from '../CategoryList/CategoryList';
-import GOALS from '../store';
+import ApiContext from '../Context/ApiContext';
 
 class Dashboard extends React.Component {
+
+	static contextType = ApiContext;
+
 	render() {
 		return (
 			<div className="dashboard">
 				<section className="buttons">
 					<Link to="/add-new-goal">
-						<button className="add-one-time">Add Goal</button>
+						<button className="add-one-time">Add New Goal</button>
 					</Link>
 				</section>
 				<section className="goal-summary-container">
 					<div className="goal-summary">
-						<h3 className="goal-header">Viewing {GOALS.length} Total Goals</h3>
+						<h3 className="goal-header">Viewing {this.context.goals.length} Total Goals</h3>
 					</div>
 					<div className="goals-filter">
 						<input

@@ -14,8 +14,8 @@ class IndvGoal extends React.Component {
 						<h2 className="goals-header">{goal.goalName}</h2>
 					</Link>
 					<div className="category-div">
-						<h4>Category:</h4>
-						<span className="category">{goal.category}</span>
+						{/* <h4>Category:</h4> */}
+						<p className="category">{goal.category}</p>
 					</div>
 				</li>
 				<div className="button-container">
