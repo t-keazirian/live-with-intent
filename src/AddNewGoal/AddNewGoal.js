@@ -1,6 +1,7 @@
 import React from 'react';
 import './addnewgoal.css';
 import ValidationError from '../ValidationError/ValidationError';
+import ApiContext from '../Context/ApiContext';
 
 class AddNewGoal extends React.Component {
 	constructor(props) {
@@ -20,14 +21,21 @@ class AddNewGoal extends React.Component {
 		};
 	}
 
+	static contextType = ApiContext;
+
 	handleSubmit = e => {
 		e.preventDefault();
 		const { goalName, category, notes } = this.state;
-		alert(`Goal submitted: name: ${goalName.value}, category: ${category.value}, notes: ${notes.value}`)
+		const newGoal = {
+			goalName: goalName.value,
+			category: category.value,
+			notes: notes.value,
+		};
+		this.context.addGoal(newGoal);
 
-			// bring user back to dashboard after goal submit
-			this.props.history.push('/dashboard');
-	}
+		// bring user back to dashboard after goal submit
+		this.props.history.push('/dashboard');
+	};
 
 	handleGoalNameChange = goalName => {
 		this.setState({
@@ -66,16 +74,16 @@ class AddNewGoal extends React.Component {
 	validateCategory = () => {
 		const category = this.state.category.value;
 		if (category === '') {
-			return 'Your goal must have a category'
+			return 'Your goal must have a category';
 		}
-	}
+	};
 
 	handleCancel = () => {
 		this.props.history.push('/dashboard');
 	};
 
 	render() {
-		const {goalName, category, notes} = this.state;
+		const { goalName, category, notes } = this.state;
 		const nameError = this.validateGoalName();
 		const categoryError = this.validateCategory();
 
@@ -85,10 +93,7 @@ class AddNewGoal extends React.Component {
 					<h1 className="addgoal">New Goal</h1>
 				</header>
 				<section>
-					<form 
-						className="add-goal-form"
-						onSubmit={e => this.handleSubmit(e)}
-					>
+					<form className="add-goal-form" onSubmit={e => this.handleSubmit(e)}>
 						<section className="form-section">
 							<label htmlFor="goal-name">Goal:</label>
 							<input
@@ -102,7 +107,9 @@ class AddNewGoal extends React.Component {
 							/>
 						</section>
 
-					{this.state.goalName.touched && <ValidationError message={nameError} />}
+						{this.state.goalName.touched && (
+							<ValidationError message={nameError} />
+						)}
 
 						<section className="goal-category">
 							<label htmlFor="goal-category">Category:</label>
@@ -125,7 +132,9 @@ class AddNewGoal extends React.Component {
 							</div>
 						</section>
 
-						{this.state.category.touched && <ValidationError message={categoryError} />}
+						{this.state.category.touched && (
+							<ValidationError message={categoryError} />
+						)}
 
 						<section className="goal-notes">
 							<label htmlFor="goal-notes">Notes:</label>
@@ -138,11 +147,11 @@ class AddNewGoal extends React.Component {
 								value={notes.value}
 							></textarea>
 						</section>
-			
+
 						<div className="add-goal">
-							<button 
-							type="submit" 
-							disabled={this.validateCategory() || this.validateGoalName()}
+							<button
+								type="submit"
+								disabled={this.validateCategory() || this.validateGoalName()}
 							>
 								Add New Goal
 							</button>

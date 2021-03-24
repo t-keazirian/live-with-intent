@@ -31,7 +31,6 @@ class App extends React.Component {
 		this.setState({
 			goals: newArray,
 		});
-		console.log(newArray);
 	};
 
 	handleEditGoal = updatedGoal => {
@@ -48,11 +47,18 @@ class App extends React.Component {
 		});
 	};
 
+	handleAddGoal = newGoal => {
+		this.setState({
+			goals: [...this.state.goals, newGoal],
+		});
+	};
+
 	render() {
 		const contextValue = {
 			goals: this.state.goals,
 			deleteGoal: this.handleDeleteGoal,
 			updateGoal: this.handleEditGoal,
+			addGoal: this.handleAddGoal,
 		};
 
 		return (

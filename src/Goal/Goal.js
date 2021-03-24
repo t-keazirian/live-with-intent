@@ -1,10 +1,8 @@
 import React from 'react';
-import GOALS from '../store';
 import { withRouter, Link } from 'react-router-dom';
 import ApiContext from '../Context/ApiContext';
 
 class Goal extends React.Component {
-
 	static contextType = ApiContext;
 
 	handleCancel = () => {
@@ -12,13 +10,13 @@ class Goal extends React.Component {
 	};
 
 	handleClickDelete = () => {
-	  const goalId = parseInt(this.props.match.params.id)
+		const goalId = parseInt(this.props.match.params.id);
 		this.context.deleteGoal(goalId);
 		this.props.history.push('/dashboard');
 	};
 
 	render() {
-		const oneGoal = GOALS.find(
+		const oneGoal = this.context.goals.find(
 			goal => goal.id === parseInt(this.props.match.params.id)
 		);
 
@@ -40,10 +38,10 @@ class Goal extends React.Component {
 								<Link to={`/edit-goal/${oneGoal.id}`}>
 									<button type="submit">Edit</button>
 								</Link>
-								<button 
-								className="delete-goal-btn" 
-								type="submit"
-								onClick={this.handleClickDelete}
+								<button
+									className="delete-goal-btn"
+									type="submit"
+									onClick={this.handleClickDelete}
 								>
 									Delete
 								</button>

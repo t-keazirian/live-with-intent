@@ -6,7 +6,6 @@ class IndvGoal extends React.Component {
 	static contextType = ApiContext;
 
 	render() {
-    
 		const { goal } = this.props;
 		return (
 			<div key={goal.id} className="goal-item">
@@ -23,13 +22,6 @@ class IndvGoal extends React.Component {
 					<Link to={`/edit-goal/${goal.id}`}>
 						<button type="submit">Edit</button>
 					</Link>
-					{/* <button
-						className="delete-goal-btn"
-						type="submit"
-						onClick={this.handleClickDelete}
-					>
-						Delete
-					</button> */}
 				</div>
 			</div>
 		);
