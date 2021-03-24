@@ -3,7 +3,10 @@ section.goal-summary-container, h1.total, .goal-item {
 }
 
 li.list-goal-item {
+  display: flex;
   list-style-type: none;
+  flex-direction: column;
+  /* align-items: center; */
 }
 
 ul {
@@ -11,8 +14,8 @@ ul {
 }
 
 h2.goals-header {
-  padding-left: 10px;
   text-align: center;
+  margin: 10px;
 }
 
 div.goal-item {
@@ -32,12 +35,16 @@ div.button-container {
   div.goal-item {
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
   }
 
   div.button-container {
     flex-direction: column;
     align-self: center;
+  }
+
+  li.list-goal-item {
+    flex-direction: row;
   }
 }
 

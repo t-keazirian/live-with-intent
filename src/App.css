@@ -26,3 +26,13 @@ div.error {
 div.one-goal-item {
   margin-top: 60px;
 }
+
+div.category-div, div.note-div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiContext from '../Context/ApiContext';
 
 class UpdateGoal extends React.Component {
 	constructor(props) {
@@ -8,6 +9,19 @@ class UpdateGoal extends React.Component {
 			category: '',
 			notes: '',
 		};
+	}
+
+	static contextType = ApiContext;
+
+	componentDidMount() {
+		const goal = this.context.goals.find(
+			goal => goal.id === parseInt(this.props.match.params.id)
+		);
+		this.setState({
+			goalName: goal.goalName,
+			category: goal.category,
+			notes: goal.notes,
+		});
 	}
 
 	handleNameChange = e => {
@@ -32,11 +46,18 @@ class UpdateGoal extends React.Component {
 		this.props.history.push('/dashboard');
 	};
 
+	handleClickDelete = () => {
+	  const goalId = parseInt(this.props.match.params.id)
+		this.context.deleteGoal(goalId);
+	};
+
 	handleSubmit = e => {
 		e.preventDefault();
-		// const { goalName, category, notes } = this.state;
-		// const newGoal = { goalName, category, notes };
-    console.log('clicked');
+		const { goalName, category, notes } = this.state;
+		const id = parseInt(this.props.match.params.id);
+		const newGoal = { goalName, category, notes, id };
+		this.context.updateGoal(newGoal);
+		this.props.history.push('/dashboard');
 	};
 
 	render() {
@@ -54,7 +75,7 @@ class UpdateGoal extends React.Component {
 								type="text"
 								name="edit-goal-name"
 								id="edit-goal-name"
-                value={goalName}
+								value={goalName}
 								onChange={this.handleNameChange}
 								required
 							/>
@@ -67,7 +88,7 @@ class UpdateGoal extends React.Component {
 									name="edit-goal-category"
 									id="edit-goal-category"
 									onChange={this.handleCategoryChange}
-                  value={category}
+									value={category}
 								>
 									<option value="">Choose Category</option>
 									<option value="get-fit">Get Fit</option>
@@ -88,13 +109,18 @@ class UpdateGoal extends React.Component {
 								id="edit-goal-notes"
 								maxLength="75"
 								onChange={this.handleNotesChange}
-                value={notes}
+								value={notes}
 							></textarea>
 						</section>
 
 						<div className="edit-goal">
-							<button type="submit">
-								Update Goal
+							<button type="submit">Update</button>
+							<button
+								className="delete-goal-btn"
+								type="submit"
+								onClick={this.handleClickDelete}
+							>
+								Delete
 							</button>
 							<button className="go-back" onClick={this.handleCancel}>
 								Cancel

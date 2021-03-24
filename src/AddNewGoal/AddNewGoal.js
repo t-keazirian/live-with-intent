@@ -25,22 +25,6 @@ class AddNewGoal extends React.Component {
 		const { goalName, category, notes } = this.state;
 		alert(`Goal submitted: name: ${goalName.value}, category: ${category.value}, notes: ${notes.value}`)
 
-			// clear the fields after successful submit
-			// this.setState({
-			// 	goalName: {
-			// 		value: '',
-			// 		touched: false
-			// 	},
-			// 	category: {
-			// 		value: '',
-			// 		touched: false
-			// 	},
-			// 	notes: {
-			// 		value: '',
-			// 		touched: false
-			// 	}
-			// });
-
 			// bring user back to dashboard after goal submit
 			this.props.history.push('/dashboard');
 	}
