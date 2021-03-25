@@ -26,7 +26,8 @@ class App extends React.Component {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json'
-			}
+			},
+			mode: 'cors'
 		})
 			.then(res => {
 				if(!res.ok) {
