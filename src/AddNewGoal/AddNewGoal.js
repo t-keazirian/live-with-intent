@@ -2,12 +2,13 @@ import React from 'react';
 import './addnewgoal.css';
 import ValidationError from '../ValidationError/ValidationError';
 import ApiContext from '../Context/ApiContext';
+import config from '../config';
 
 class AddNewGoal extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			goalName: {
+			goal_name: {
 				value: '',
 				touched: false,
 			},
@@ -25,22 +26,36 @@ class AddNewGoal extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { goalName, category, notes } = this.state;
+		const { goal_name, category, notes } = this.state;
 		const newGoal = {
-			goalName: goalName.value,
+			goal_name: goal_name.value,
 			category: category.value,
 			notes: notes.value,
 		};
-		this.context.addGoal(newGoal);
 
-		// bring user back to dashboard after goal submit
-		this.props.history.push('/dashboard');
+		fetch(`${config.API_BASE_URL}/goals`, {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify(newGoal),
+		})
+			.then(res => {
+				if (!res.ok) {
+					return res.json().then(error => Promise.reject(error));
+				}
+				return res.json();
+			})
+			.then(goal => {
+				this.context.addGoal(goal);
+				this.props.history.push('/dashboard');
+			});
 	};
 
-	handleGoalNameChange = goalName => {
+	handleGoalNameChange = goal_name => {
 		this.setState({
-			goalName: {
-				value: goalName,
+			goal_name: {
+				value: goal_name,
 				touched: true,
 			},
 		});
@@ -65,8 +80,8 @@ class AddNewGoal extends React.Component {
 	};
 
 	validateGoalName = () => {
-		const goalName = this.state.goalName.value.trim();
-		if (goalName.length === 0) {
+		const goal_name = this.state.goal_name.value.trim();
+		if (goal_name.length === 0) {
 			return 'Your goal must have a name';
 		}
 	};
@@ -83,7 +98,7 @@ class AddNewGoal extends React.Component {
 	};
 
 	render() {
-		const { goalName, category, notes } = this.state;
+		const { goal_name, category, notes } = this.state;
 		const nameError = this.validateGoalName();
 		const categoryError = this.validateCategory();
 
@@ -101,13 +116,13 @@ class AddNewGoal extends React.Component {
 								name="goal-name"
 								id="goal-name"
 								placeholder="new goal"
-								value={goalName.value}
+								value={goal_name.value}
 								onChange={e => this.handleGoalNameChange(e.target.value)}
 								required
 							/>
 						</section>
 
-						{this.state.goalName.touched && (
+						{this.state.goal_name.touched && (
 							<ValidationError message={nameError} />
 						)}
 

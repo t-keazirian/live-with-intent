@@ -5,7 +5,7 @@ class UpdateGoal extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			goalName: '',
+			goal_name: '',
 			category: '',
 			notes: '',
 		};
@@ -18,7 +18,7 @@ class UpdateGoal extends React.Component {
 			goal => goal.id === parseInt(this.props.match.params.id)
 		);
 		this.setState({
-			goalName: goal.goalName,
+			goal_name: goal.goal_name,
 			category: goal.category,
 			notes: goal.notes,
 		});
@@ -26,7 +26,7 @@ class UpdateGoal extends React.Component {
 
 	handleNameChange = e => {
 		this.setState({
-			goalName: e.target.value,
+			goal_name: e.target.value,
 		});
 	};
 
@@ -47,21 +47,21 @@ class UpdateGoal extends React.Component {
 	};
 
 	handleClickDelete = () => {
-	  const goalId = parseInt(this.props.match.params.id)
+		const goalId = parseInt(this.props.match.params.id);
 		this.context.deleteGoal(goalId);
 	};
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { goalName, category, notes } = this.state;
+		const { goal_name, category, notes } = this.state;
 		const id = parseInt(this.props.match.params.id);
-		const newGoal = { goalName, category, notes, id };
+		const newGoal = { goal_name, category, notes, id };
 		this.context.updateGoal(newGoal);
 		this.props.history.push('/dashboard');
 	};
 
 	render() {
-		const { goalName, category, notes } = this.state;
+		const { goal_name, category, notes } = this.state;
 		return (
 			<div>
 				<header>
@@ -75,7 +75,7 @@ class UpdateGoal extends React.Component {
 								type="text"
 								name="edit-goal-name"
 								id="edit-goal-name"
-								value={goalName}
+								value={goal_name}
 								onChange={this.handleNameChange}
 								required
 							/>

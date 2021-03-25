@@ -11,7 +11,7 @@ class IndvGoal extends React.Component {
 			<div key={goal.id} className="goal-item">
 				<li key={goal.id} className="list-goal-item">
 					<Link to={`/goal/${goal.id}`}>
-						<h2 className="goals-header">{goal.goalName}</h2>
+						<h2 className="goals-header">{goal.goal_name}</h2>
 					</Link>
 					<div className="category-div">
 						{/* <h4>Category:</h4> */}

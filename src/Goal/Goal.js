@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import ApiContext from '../Context/ApiContext';
+import config from '../config';
 
 class Goal extends React.Component {
 	static contextType = ApiContext;
@@ -11,7 +12,16 @@ class Goal extends React.Component {
 
 	handleClickDelete = () => {
 		const goalId = parseInt(this.props.match.params.id);
-		this.context.deleteGoal(goalId);
+
+		fetch(`${config.API_BASE_URL}/goals/${goalId}`, {
+			method: 'DELETE',
+			headers: {
+				'content-type': 'application/json',
+			},
+		})
+		.then(() => {
+			this.context.deleteGoal(goalId)
+		})
 		this.props.history.push('/dashboard');
 	};
 
@@ -25,7 +35,7 @@ class Goal extends React.Component {
 				<div className="goals-list">
 					<div className="one-goal-item">
 						<div key={oneGoal.id} className="goal-item">
-							<h2 className="goals-header">{oneGoal.goalName}</h2>
+							<h2 className="goals-header">{oneGoal.goal_name}</h2>
 							<div className="category-div">
 								<h4>Category:</h4>
 								<p className="category">{oneGoal.category}</p>

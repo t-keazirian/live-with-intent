@@ -3,14 +3,13 @@ import './App.css';
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 import { Route, Switch } from 'react-router-dom';
-import AddNewOTGoal from './AddNewGoal/AddNewGoal';
+import AddNewGoal from './AddNewGoal/AddNewGoal';
 import Dashboard from './Dashboard/Dashboard';
 import LandingPage from './LandingPage/LandingPage';
 import NotFound from './NotFound/NotFound';
 import UpdateGoal from './UpdateGoal/UpdateGoal';
 import Goal from './Goal/Goal';
 import ApiContext from './Context/ApiContext';
-import GOALS from './store';
 import config from './config';
 
 class App extends React.Component {
@@ -22,29 +21,23 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch(config.API_BASE_URL, {
+		fetch(`${config.API_BASE_URL}/goals`, {
 			method: 'GET',
 			headers: {
-				'content-type': 'application/json'
+				'content-type': 'application/json',
 			},
-			mode: 'cors'
 		})
 			.then(res => {
-				if(!res.ok) {
-					return res.json()
-					.then(error => Promise.reject(error))
+				if (!res.ok) {
+					return res.json().then(error => Promise.reject(error));
 				}
-				return res.json()
+				return res.json();
 			})
 			.then(goals => {
 				this.setState({
-					goals: goals
-				})
-				console.log(goals);
-			})
-		// this.setState({
-		// 	goals: GOALS,
-		// });
+					goals: goals,
+				});
+			});
 	}
 
 	handleDeleteGoal = goalId => {
@@ -57,7 +50,7 @@ class App extends React.Component {
 	handleEditGoal = updatedGoal => {
 		const newGoalArray = this.state.goals.map(goal => {
 			if (goal.id === updatedGoal.id) {
-				goal.goalName = updatedGoal.goalName;
+				goal.goal_name = updatedGoal.goal_name;
 				goal.category = updatedGoal.category;
 				goal.notes = updatedGoal.notes;
 			}
@@ -92,7 +85,7 @@ class App extends React.Component {
 						<Switch>
 							<Route exact path="/" component={LandingPage} />
 							<Route path="/dashboard" component={Dashboard} />
-							<Route path="/add-new-goal" component={AddNewOTGoal} />
+							<Route path="/add-new-goal" component={AddNewGoal} />
 							<Route path="/edit-goal/:id" component={UpdateGoal} />
 							<Route path="/goal/:id" component={Goal} />
 							<Route component={NotFound} />
