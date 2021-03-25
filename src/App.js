@@ -11,6 +11,7 @@ import UpdateGoal from './UpdateGoal/UpdateGoal';
 import Goal from './Goal/Goal';
 import ApiContext from './Context/ApiContext';
 import GOALS from './store';
+import config from './config';
 
 class App extends React.Component {
 	constructor() {
@@ -21,9 +22,28 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({
-			goals: GOALS,
-		});
+		fetch(config.API_BASE_URL, {
+			method: 'GET',
+			headers: {
+				'content-type': 'application/json'
+			}
+		})
+			.then(res => {
+				if(!res.ok) {
+					return res.json()
+					.then(error => Promise.reject(error))
+				}
+				return res.json()
+			})
+			.then(goals => {
+				this.setState({
+					goals: goals
+				})
+				console.log(goals);
+			})
+		// this.setState({
+		// 	goals: GOALS,
+		// });
 	}
 
 	handleDeleteGoal = goalId => {
