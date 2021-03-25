@@ -11,6 +11,7 @@ import UpdateGoal from './UpdateGoal/UpdateGoal';
 import Goal from './Goal/Goal';
 import ApiContext from './Context/ApiContext';
 import config from './config';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends React.Component {
 	constructor() {
@@ -84,10 +85,18 @@ class App extends React.Component {
 						</nav>
 						<Switch>
 							<Route exact path="/" component={LandingPage} />
-							<Route path="/dashboard" component={Dashboard} />
-							<Route path="/add-new-goal" component={AddNewGoal} />
-							<Route path="/edit-goal/:id" component={UpdateGoal} />
-							<Route path="/goal/:id" component={Goal} />
+							<ErrorBoundary>
+								<Route path="/dashboard" component={Dashboard} />
+							</ErrorBoundary>
+							<ErrorBoundary>
+								<Route path="/add-new-goal" component={AddNewGoal} />
+							</ErrorBoundary>
+							<ErrorBoundary>
+								<Route path="/edit-goal/:id" component={UpdateGoal} />
+							</ErrorBoundary>
+							<ErrorBoundary>
+								<Route path="/goal/:id" component={Goal} />
+							</ErrorBoundary>
 							<Route component={NotFound} />
 						</Switch>
 					</main>

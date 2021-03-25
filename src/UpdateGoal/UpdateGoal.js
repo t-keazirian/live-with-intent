@@ -1,10 +1,12 @@
 import React from 'react';
 import ApiContext from '../Context/ApiContext';
+import config from '../config';
 
 class UpdateGoal extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			id: '',
 			goal_name: '',
 			category: '',
 			notes: '',
@@ -14,14 +16,27 @@ class UpdateGoal extends React.Component {
 	static contextType = ApiContext;
 
 	componentDidMount() {
-		const goal = this.context.goals.find(
-			goal => goal.id === parseInt(this.props.match.params.id)
-		);
-		this.setState({
-			goal_name: goal.goal_name,
-			category: goal.category,
-			notes: goal.notes,
-		});
+		const goalId = this.props.match.params.id;
+		fetch(`${config.API_BASE_URL}/goals/${goalId}`, {
+			method: 'GET',
+			headers: {
+				'content-type': 'application/json',
+			},
+		})
+			.then(res => {
+				if (!res.ok) {
+					return res.json().then(error => Promise.reject(error));
+				}
+				return res.json();
+			})
+			.then(goal => {
+				this.setState({
+					id: goal.id,
+					goal_name: goal.goal_name,
+					category: goal.category,
+					notes: goal.notes,
+				});
+			});
 	}
 
 	handleNameChange = e => {
@@ -48,15 +63,40 @@ class UpdateGoal extends React.Component {
 
 	handleClickDelete = () => {
 		const goalId = parseInt(this.props.match.params.id);
-		this.context.deleteGoal(goalId);
+
+		fetch(`${config.API_BASE_URL}/goals/${goalId}`, {
+			method: 'DELETE',
+			headers: {
+				'content-type': 'application/json',
+			},
+		}).then(() => {
+			this.context.deleteGoal(goalId);
+		});
+		this.props.history.push('/dashboard');
 	};
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { goal_name, category, notes } = this.state;
-		const id = parseInt(this.props.match.params.id);
-		const newGoal = { goal_name, category, notes, id };
-		this.context.updateGoal(newGoal);
+		const { id, goal_name, category, notes } = this.state;
+		const goalId = parseInt(this.props.match.params.id);
+		const updatedGoal = { id, goal_name, category, notes };
+
+		fetch(`${config.API_BASE_URL}/goals/${goalId}`, {
+			method: 'PATCH',
+			body: JSON.stringify(updatedGoal),
+			headers: {
+				'content-type': 'application/json',
+			},
+		})
+			.then(res => {
+				if (!res.ok) {
+					return res.json().then(error => Promise.reject(error));
+				}
+			})
+			.then(() => {
+				this.context.updateGoal(updatedGoal);
+			});
+
 		this.props.history.push('/dashboard');
 	};
 
