@@ -31,12 +31,3 @@ describe('Dashboard', () => {
 	});
 });
 
-describe('Dashboard snapshot', () => {
-	it('renders the UI as expected', () => {
-		const tree = renderer.create(
-    <BrowserRouter>
-    <Dashboard />
-    </BrowserRouter>).toJSON();
-		expect(tree).toMatchSnapshot();
-	});
-});
