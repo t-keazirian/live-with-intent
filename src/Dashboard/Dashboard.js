@@ -2,11 +2,9 @@ import React from 'react';
 import './dashboard.css';
 import TotalGoals from '../TotalGoals/TotalGoals';
 import { Link } from 'react-router-dom';
-import CategoryList from '../CategoryList/CategoryList';
 import ApiContext from '../Context/ApiContext';
 
 class Dashboard extends React.Component {
-
 	static contextType = ApiContext;
 
 	render() {
@@ -19,19 +17,11 @@ class Dashboard extends React.Component {
 				</section>
 				<section className="goal-summary-container">
 					<div className="goal-summary">
-						<h3 className="goal-header">Viewing {this.context.goals.length} Total Goals</h3>
-					</div>
-					<div className="goals-filter">
-						<input
-							type="text"
-							className="name-search"
-							placeholder="Search goals by name"
-						/>
-
-						<CategoryList />
+						<h3 className="goal-header">
+							Viewing {this.context.goals.length} Total Goals
+						</h3>
 					</div>
 				</section>
-
 				<TotalGoals />
 			</div>
 		);

@@ -5,11 +5,13 @@
 html, body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
+  
 }
 
 div.app {
   display: flex;
   flex-direction: column;
+  
 }
 
 main.main-app {
@@ -24,6 +26,7 @@ div.error {
 
 div.one-goal-item {
   margin-top: 60px;
+  
 }
 
 div.category-div, div.note-div {
