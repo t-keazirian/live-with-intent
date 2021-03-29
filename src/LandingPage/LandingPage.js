@@ -7,7 +7,7 @@ class LandingPage extends React.Component {
 			<div className="landing-page">
 				<header className="main-header">
 					<h1>Live With Intent</h1>
-					<h2>take your goals into your own hands</h2>
+					<h2 className='intro'>take your goals into your own hands</h2>
 				</header>
 				<section className="experience-section">
 					<header>
@@ -24,7 +24,7 @@ class LandingPage extends React.Component {
 						or small, and keep track of your progress.
 					</p>
 				</section>
-				<section className="add-goal-section">
+				<section className="add-goal-intro">
 					<header>
 						<h3>Add your goals</h3>
 					</header>

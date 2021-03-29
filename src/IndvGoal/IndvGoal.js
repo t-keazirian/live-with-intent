@@ -13,14 +13,10 @@ class IndvGoal extends React.Component {
 					<Link to={`/goal/${goal.id}`}>
 						<h2 className="goals-header">{goal.goal_name}</h2>
 					</Link>
-					<div className="category-div">
-						{/* <h4>Category:</h4> */}
-						<p className="category">{goal.category}</p>
-					</div>
 				</li>
 				<div className="button-container">
 					<Link to={`/edit-goal/${goal.id}`}>
-						<button type="submit">Edit</button>
+						<button type="submit" className='edit-goal-btn'>Edit</button>
 					</Link>
 				</div>
 			</div>

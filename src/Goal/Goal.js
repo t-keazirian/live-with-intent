@@ -6,7 +6,7 @@ import config from '../config';
 class Goal extends React.Component {
 	static contextType = ApiContext;
 
-	handleCancel = () => {
+	handleClickGoBack = () => {
 		this.props.history.push('/dashboard');
 	};
 
@@ -18,10 +18,9 @@ class Goal extends React.Component {
 			headers: {
 				'content-type': 'application/json',
 			},
-		})
-		.then(() => {
-			this.context.deleteGoal(goalId)
-		})
+		}).then(() => {
+			this.context.deleteGoal(goalId);
+		});
 		this.props.history.push('/dashboard');
 	};
 
@@ -34,7 +33,7 @@ class Goal extends React.Component {
 			<div className="goals-container">
 				<div className="goals-list">
 					<div className="one-goal-item">
-						<div key={oneGoal.id} className="goal-item">
+						<div key={oneGoal.id} className="goal-item-info">
 							<h2 className="goals-header">{oneGoal.goal_name}</h2>
 							<div className="category-div">
 								<h4>Category:</h4>
@@ -46,8 +45,11 @@ class Goal extends React.Component {
 							</div>
 							<div className="button-container">
 								<Link to={`/edit-goal/${oneGoal.id}`}>
-									<button type="submit">Edit</button>
+									<button type="submit" className="edit-goal-btn">
+										Edit
+									</button>
 								</Link>
+
 								<button
 									className="delete-goal-btn"
 									type="submit"
@@ -55,7 +57,11 @@ class Goal extends React.Component {
 								>
 									Delete
 								</button>
-								<button className="go-back" onClick={this.handleCancel}>
+
+								<button
+									className="go-back-btn"
+									onClick={this.handleClickGoBack}
+								>
 									Go Back
 								</button>
 							</div>

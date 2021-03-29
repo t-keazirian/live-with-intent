@@ -19,22 +19,7 @@ h2.goals-header {
   margin: 10px;
 }
 
-div.goal-item {
-  display: flex;
-  flex-direction: column;
-  border: 2px black solid;
-  margin: 10px;
-}
-
 @media all and (min-width: 800px) {
-  div.goal-item {
-    flex-direction: row;
-  }
-
-  div.button-container {
-    flex-direction: column;
-    align-self: center;
-  }
 
   li.list-goal-item {
     flex-direction: row;

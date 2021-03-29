@@ -18,6 +18,7 @@ class AddNewGoal extends React.Component {
 			},
 			notes: {
 				value: '',
+				touched: false
 			},
 		};
 	}
@@ -93,6 +94,13 @@ class AddNewGoal extends React.Component {
 		}
 	};
 
+	validateNotes = () => {
+		const notes = this.state.notes.value.trim();
+		if (notes === '') {
+			return 'Your goal must have notes';
+		}
+	};
+
 	handleCancel = () => {
 		this.props.history.push('/dashboard');
 	};
@@ -101,13 +109,14 @@ class AddNewGoal extends React.Component {
 		const { goal_name, category, notes } = this.state;
 		const nameError = this.validateGoalName();
 		const categoryError = this.validateCategory();
+		const notesError = this.validateNotes();
 
 		return (
 			<div>
 				<header>
 					<h1 className="addgoal">New Goal</h1>
 				</header>
-				<section>
+				<section className="add-goal-section">
 					<form className="add-goal-form" onSubmit={e => this.handleSubmit(e)}>
 						<section className="form-section">
 							<label htmlFor="goal-name">Goal:</label>
@@ -115,7 +124,7 @@ class AddNewGoal extends React.Component {
 								type="text"
 								name="goal-name"
 								id="goal-name"
-								placeholder="new goal"
+								placeholder="New Goal"
 								value={goal_name.value}
 								onChange={e => this.handleGoalNameChange(e.target.value)}
 								required
@@ -157,20 +166,30 @@ class AddNewGoal extends React.Component {
 								name="goal-notes"
 								id="goal-notes"
 								maxLength="75"
-								placeholder="optional notes"
+								placeholder="Notes"
 								onChange={e => this.handleNotesChange(e.target.value)}
 								value={notes.value}
+								required
 							></textarea>
 						</section>
+
+						{this.state.notes.touched && (
+							<ValidationError message={notesError} />
+						)}
 
 						<div className="add-goal">
 							<button
 								type="submit"
-								disabled={this.validateCategory() || this.validateGoalName()}
+								className="add-goal-btn"
+								disabled={
+									this.validateCategory() ||
+									this.validateGoalName() ||
+									this.validateNotes()
+								}
 							>
 								Add New Goal
 							</button>
-							<button className="go-back" onClick={this.handleCancel}>
+							<button className="cancel-btn" onClick={this.handleCancel}>
 								Cancel
 							</button>
 						</div>

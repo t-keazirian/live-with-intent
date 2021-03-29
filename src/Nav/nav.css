@@ -5,11 +5,10 @@ div.nav {
   left: 0;
   right: 0;
   padding: 10px;
-  background-color: #aaa;
+  background-color: #4A4A48;
   justify-content: space-around;
 }
 
 .homepage-link {
   text-align: start;
 }
-

@@ -103,11 +103,11 @@ class UpdateGoal extends React.Component {
 	render() {
 		const { goal_name, category, notes } = this.state;
 		return (
-			<div>
+			<div className='edit-goal-div'>
 				<header>
 					<h1 className="edit-goal">Goal</h1>
 				</header>
-				<section>
+				<section className='edit-goal-section'>
 					<form className="edit-goal-form" onSubmit={this.handleSubmit}>
 						<section className="form-section">
 							<label htmlFor="edit-goal-name">Edit Goal:</label>
@@ -154,7 +154,9 @@ class UpdateGoal extends React.Component {
 						</section>
 
 						<div className="edit-goal">
-							<button type="submit">Update</button>
+							<button type="submit" className="edit-goal-btn">
+								Update
+							</button>
 							<button
 								className="delete-goal-btn"
 								type="submit"
@@ -162,7 +164,7 @@ class UpdateGoal extends React.Component {
 							>
 								Delete
 							</button>
-							<button className="go-back" onClick={this.handleCancel}>
+							<button className="cancel-btn" onClick={this.handleCancel}>
 								Cancel
 							</button>
 						</div>

@@ -7,9 +7,7 @@ select#goal-type, select#goal-category, input.name-search {
   margin: 5px;
 }
 
-/* [type=submit], button {
-  margin: 5px;
-} */
+
 
 @media all and (min-width: 800px) {
   section.buttons {
