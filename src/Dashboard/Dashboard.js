@@ -9,15 +9,15 @@ class Dashboard extends React.Component {
 
 	render() {
 		return (
-			<div className="dashboard">
-				<section className="buttons">
-					<Link to="/add-new-goal">
-						<button className="add-goal-btn">Add New Goal</button>
+			<div className='dashboard'>
+				<section className='buttons'>
+					<Link to='/add-new-goal'>
+						<button className='add-goal-btn'>Add New Goal</button>
 					</Link>
 				</section>
-				<section className="goal-summary-container">
-					<div className="goal-summary">
-						<h3 className="goal-header">
+				<section className='goal-summary-container'>
+					<div className='goal-summary'>
+						<h3 className='goal-header'>
 							Viewing {this.context.goals.length} Total Goals
 						</h3>
 					</div>

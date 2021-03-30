@@ -4,13 +4,13 @@ import './landingpage.css';
 class LandingPage extends React.Component {
 	render() {
 		return (
-			<div className="landing-page">
-				<header className="main-header">
+			<div className='landing-page'>
+				<header className='main-header'>
 					
 					<h1>Live With Intent</h1>
-					<h2 className="intro">take your goals into your own hands</h2>
+					<h2 className='intro'>take your goals into your own hands</h2>
 				</header>
-				<section className="experience-section">
+				<section className='experience-section'>
 					<header>
 						<h3>Experience Living With Intention</h3>
 					</header>
@@ -29,7 +29,7 @@ class LandingPage extends React.Component {
 						or small, and keep track of your progress.
 					</p>
 				</section>
-				<section className="add-goal-intro">
+				<section className='add-goal-intro'>
 					<header>
 						<h3>Add your goals</h3>
 					</header>
@@ -39,7 +39,7 @@ class LandingPage extends React.Component {
 						habits.
 					</p>
 				</section>
-				<section className="track-section">
+				<section className='track-section'>
 					<header>
 						<h3>Track your progress</h3>
 					</header>
@@ -51,54 +51,54 @@ class LandingPage extends React.Component {
 				</section>
 				<div>
 					<header>
-						<h3 className="start-h3">Start Living With Intent Today</h3>
+						<h3 className='start-h3'>Start Living With Intent Today</h3>
 					</header>
 				</div>
-				<section className="start-section">
-					<form className="signup-form">
-						<div className="form-container">
-							<div className="item">
-								<label htmlFor="first-name">First name:</label>
+				<section className='start-section'>
+					<form className='signup-form'>
+						<div className='form-container'>
+							<div className='item'>
+								<label htmlFor='first-name'>First name:</label>
 								<input
-									type="text"
-									name="first-name"
-									id="first-name"
-									placeholder="First Name"
+									type='text'
+									name='first-name'
+									id='first-name'
+									placeholder='First Name'
 									required
 								/>
 							</div>
-							<div className="item">
-								<label htmlFor="last-name">Last name:</label>
+							<div className='item'>
+								<label htmlFor='last-name'>Last name:</label>
 								<input
-									type="text"
-									name="last-name"
-									id="last-name"
-									placeholder="Last Name"
+									type='text'
+									name='last-name'
+									id='last-name'
+									placeholder='Last Name'
 									required
 								/>
 							</div>
-							<div className="item">
-								<label htmlFor="username">Email:</label>
+							<div className='item'>
+								<label htmlFor='username'>Email:</label>
 								<input
-									type="text"
-									name="username"
-									id="username"
-									placeholder="example@abc.com"
+									type='text'
+									name='username'
+									id='username'
+									placeholder='example@abc.com'
 									required
 								/>
 							</div>
-							<div className="item">
-								<label htmlFor="password">Password:</label>
+							<div className='item'>
+								<label htmlFor='password'>Password:</label>
 								<input
-									type="text"
-									name="password"
-									id="password"
-									placeholder="type your password"
+									type='text'
+									name='password'
+									id='password'
+									placeholder='type your password'
 									required
 								/>
 							</div>
 						</div>
-						<button type="submit">Sign Up</button>
+						<button type='submit'>Sign Up</button>
 					</form>
 				</section>
 			</div>

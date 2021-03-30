@@ -105,67 +105,67 @@ class UpdateGoal extends React.Component {
 		return (
 			<>
 			<header>
-					<h1 className="edit-goal">Goal</h1>
+					<h1 className='edit-goal'>Goal</h1>
 				</header>
 			<div className='edit-goal-div'>
 				<section className='edit-goal-section'>
-					<form className="edit-goal-form" onSubmit={this.handleSubmit}>
-						<section className="form-section">
-							<label htmlFor="edit-goal-name">Edit Goal:</label>
+					<form className='edit-goal-form' onSubmit={this.handleSubmit}>
+						<section className='form-section'>
+							<label htmlFor='edit-goal-name'>Edit Goal:</label>
 							<input
-								type="text"
-								name="edit-goal-name"
-								id="edit-goal-name"
+								type='text'
+								name='edit-goal-name'
+								id='edit-goal-name'
 								value={goal_name}
 								onChange={this.handleNameChange}
 								required
 							/>
 						</section>
 
-						<section className="goal-category">
-							<label htmlFor="edit-goal-category">Category:</label>
-							<div className="goal-category">
+						<section className='goal-category'>
+							<label htmlFor='edit-goal-category'>Category:</label>
+							<div className='goal-category'>
 								<select
-									name="edit-goal-category"
-									id="edit-goal-category"
+									name='edit-goal-category'
+									id='edit-goal-category'
 									onChange={this.handleCategoryChange}
 									value={category}
 								>
-									<option value="">Choose Category</option>
-									<option value="get-fit">Get Fit</option>
-									<option value="nutrition">Nutrition</option>
-									<option value="personal-growth">Personal Growth</option>
-									<option value="learn-skill">Learn A Skill</option>
-									<option value="be-productive">Be Productive</option>
-									<option value="mindfulness">Mindfulness</option>
-									<option value="sleep">Sleep</option>
+									<option value=''>Choose Category</option>
+									<option value='get-fit'>Get Fit</option>
+									<option value='nutrition'>Nutrition</option>
+									<option value='personal-growth'>Personal Growth</option>
+									<option value='learn-skill'>Learn A Skill</option>
+									<option value='be-productive'>Be Productive</option>
+									<option value='mindfulness'>Mindfulness</option>
+									<option value='sleep'>Sleep</option>
 								</select>
 							</div>
 						</section>
 
-						<section className="goal-notes">
-							<label htmlFor="edit-goal-notes">Notes:</label>
+						<section className='goal-notes'>
+							<label htmlFor='edit-goal-notes'>Notes:</label>
 							<textarea
-								name="edit-goal-notes"
-								id="edit-goal-notes"
-								maxLength="75"
+								name='edit-goal-notes'
+								id='edit-goal-notes'
+								maxLength='75'
 								onChange={this.handleNotesChange}
 								value={notes}
 							></textarea>
 						</section>
 
-						<div className="edit-goal">
-							<button type="submit" className="edit-goal-btn">
+						<div className='edit-goal'>
+							<button type='submit' className='edit-goal-btn'>
 								Update
 							</button>
 							<button
-								className="delete-goal-btn"
-								type="submit"
+								className='delete-goal-btn'
+								type='submit'
 								onClick={this.handleClickDelete}
 							>
 								Delete
 							</button>
-							<button className="cancel-btn" onClick={this.handleCancel}>
+							<button className='cancel-btn' onClick={this.handleCancel}>
 								Cancel
 							</button>
 						</div>

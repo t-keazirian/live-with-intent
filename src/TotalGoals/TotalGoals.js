@@ -8,9 +8,9 @@ class TotalGoals extends React.Component {
 
 	render() {
 		return (
-			<div className="total-goals">
-				<div className="goals-container">
-					<div className="goals-list">
+			<div className='total-goals'>
+				<div className='goals-container'>
+					<div className='goals-list'>
 						<ul>
 							{this.context.goals.map(goal => (
 								<IndvGoal goal={goal} key={goal.id}/>

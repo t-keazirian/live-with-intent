@@ -30,36 +30,36 @@ class Goal extends React.Component {
 		);
 
 		return (
-			<div className="goals-container">
-				<div className="goals-list">
-					<div className="one-goal-item">
-						<div key={oneGoal.id} className="goal-item-info">
-							<h2 className="goals-header">{oneGoal.goal_name}</h2>
-							<div className="category-div">
+			<div className='goals-container'>
+				<div className='goals-list'>
+					<div className='one-goal-item'>
+						<div key={oneGoal.id} className='goal-item-info'>
+							<h2 className='goals-header'>{oneGoal.goal_name}</h2>
+							<div className='category-div'>
 								<h4>Category:</h4>
-								<p className="category">{oneGoal.category}</p>
+								<p className='category'>{oneGoal.category}</p>
 							</div>
-							<div className="note-div">
+							<div className='note-div'>
 								<h4>Notes:</h4>
-								<p className="goal-note">{oneGoal.notes}</p>
+								<p className='goal-note'>{oneGoal.notes}</p>
 							</div>
-							<div className="button-container">
+							<div className='button-container'>
 								<Link to={`/edit-goal/${oneGoal.id}`}>
-									<button type="submit" className="edit-goal-btn">
+									<button type='submit' className='edit-goal-btn'>
 										Edit
 									</button>
 								</Link>
 
 								<button
-									className="delete-goal-btn"
-									type="submit"
+									className='delete-goal-btn'
+									type='submit'
 									onClick={this.handleClickDelete}
 								>
 									Delete
 								</button>
 
 								<button
-									className="go-back-btn"
+									className='go-back-btn'
 									onClick={this.handleClickGoBack}
 								>
 									Go Back

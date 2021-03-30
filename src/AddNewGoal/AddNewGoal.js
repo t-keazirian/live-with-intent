@@ -114,18 +114,18 @@ class AddNewGoal extends React.Component {
 		return (
 			<div>
 				<header>
-					<h1 className="addgoal">New Goal</h1>
+					<h1 className='addgoal'>New Goal</h1>
 				</header>
 				<div className='add-goal-div'>
-				<section className="add-goal-section">
-					<form className="add-goal-form" onSubmit={e => this.handleSubmit(e)}>
-						<section className="form-section">
-							<label htmlFor="goal-name">Goal:</label>
+				<section className='add-goal-section'>
+					<form className='add-goal-form' onSubmit={e => this.handleSubmit(e)}>
+						<section className='form-section'>
+							<label htmlFor='goal-name'>Goal:</label>
 							<input
-								type="text"
-								name="goal-name"
-								id="goal-name"
-								placeholder="New Goal"
+								type='text'
+								name='goal-name'
+								id='goal-name'
+								placeholder='New Goal'
 								value={goal_name.value}
 								onChange={e => this.handleGoalNameChange(e.target.value)}
 								required
@@ -136,23 +136,23 @@ class AddNewGoal extends React.Component {
 							<ValidationError message={nameError} />
 						)}
 
-						<section className="goal-category">
-							<label htmlFor="goal-category">Category:</label>
-							<div className="goal-category">
+						<section className='goal-category'>
+							<label htmlFor='goal-category'>Category:</label>
+							<div className='goal-category'>
 								<select
-									name="goal-category"
-									id="goal-category"
+									name='goal-category'
+									id='goal-category'
 									onChange={e => this.handleCategoryChange(e.target.value)}
 									value={category.value}
 								>
-									<option value="">Choose Category</option>
-									<option value="get-fit">Get Fit</option>
-									<option value="nutrition">Nutrition</option>
-									<option value="personal-growth">Personal Growth</option>
-									<option value="learn-skill">Learn A Skill</option>
-									<option value="be-productive">Be Productive</option>
-									<option value="mindfulness">Mindfulness</option>
-									<option value="sleep">Sleep</option>
+									<option value=''>Choose Category</option>
+									<option value='get-fit'>Get Fit</option>
+									<option value='nutrition'>Nutrition</option>
+									<option value='personal-growth'>Personal Growth</option>
+									<option value='learn-skill'>Learn A Skill</option>
+									<option value='be-productive'>Be Productive</option>
+									<option value='mindfulness'>Mindfulness</option>
+									<option value='sleep'>Sleep</option>
 								</select>
 							</div>
 						</section>
@@ -161,13 +161,13 @@ class AddNewGoal extends React.Component {
 							<ValidationError message={categoryError} />
 						)}
 
-						<section className="goal-notes">
-							<label htmlFor="goal-notes">Notes:</label>
+						<section className='goal-notes'>
+							<label htmlFor='goal-notes'>Notes:</label>
 							<textarea
-								name="goal-notes"
-								id="goal-notes"
-								maxLength="75"
-								placeholder="Notes"
+								name='goal-notes'
+								id='goal-notes'
+								maxLength='75'
+								placeholder='Notes'
 								onChange={e => this.handleNotesChange(e.target.value)}
 								value={notes.value}
 								required
@@ -178,10 +178,10 @@ class AddNewGoal extends React.Component {
 							<ValidationError message={notesError} />
 						)}
 
-						<div className="add-goal">
+						<div className='add-goal'>
 							<button
-								type="submit"
-								className="add-goal-btn"
+								type='submit'
+								className='add-goal-btn'
 								disabled={
 									this.validateCategory() ||
 									this.validateGoalName() ||
@@ -190,7 +190,7 @@ class AddNewGoal extends React.Component {
 							>
 								Add New Goal
 							</button>
-							<button className="cancel-btn" onClick={this.handleCancel}>
+							<button className='cancel-btn' onClick={this.handleCancel}>
 								Cancel
 							</button>
 						</div>

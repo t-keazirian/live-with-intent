@@ -77,21 +77,21 @@ class App extends React.Component {
 
 		return (
 			<ApiContext.Provider value={contextValue}>
-				<div className="app">
-					<main className="main-app">
+				<div className='app'>
+					<main className='main-app'>
 						<nav>
 							<Nav />
 						</nav>
 						<Switch>
-							<Route exact path="/" component={LandingPage} />
+							<Route exact path='/' component={LandingPage} />
 
-							<Route path="/dashboard" component={Dashboard} />
+							<Route path='/dashboard' component={Dashboard} />
 
-							<Route path="/add-new-goal" component={AddNewGoal} />
+							<Route path='/add-new-goal' component={AddNewGoal} />
 
-							<Route path="/edit-goal/:id" component={UpdateGoal} />
+							<Route path='/edit-goal/:id' component={UpdateGoal} />
 
-							<Route path="/goal/:id" component={Goal} />
+							<Route path='/goal/:id' component={Goal} />
 
 							<Route component={NotFound} />
 						</Switch>
