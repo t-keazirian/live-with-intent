@@ -29,7 +29,7 @@ div.one-goal-item {
 }
 
 div.category-div,
-div.note-div {
+div.note-div, div.date-div {
 	display: flex;
 	flex-direction: column;
 	align-content: center;

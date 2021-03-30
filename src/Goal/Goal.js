@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import ApiContext from '../Context/ApiContext';
 import config from '../config';
+import Moment from 'react-moment';
 
 class Goal extends React.Component {
 	static contextType = ApiContext;
@@ -42,6 +43,12 @@ class Goal extends React.Component {
 							<div className='note-div'>
 								<h4>Notes:</h4>
 								<p className='goal-note'>{oneGoal.notes}</p>
+							</div>
+							<div className='date-div'>
+								<h4>Date Added:</h4>
+							<Moment format='dddd MMM D YYYY'>
+								{oneGoal.post_date}
+							</Moment>
 							</div>
 							<div className='button-container'>
 								<Link to={`/edit-goal/${oneGoal.id}`}>
