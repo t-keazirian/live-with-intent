@@ -2,6 +2,12 @@ import React from 'react';
 import './landingpage.css';
 
 class LandingPage extends React.Component {
+
+	handleSubmit = (e) => {
+		e.preventDefault();
+		alert('This app is in beta testing. Click on Dashboard above to try it out!')
+	}
+
 	render() {
 		return (
 			<div className='landing-page'>
@@ -54,8 +60,12 @@ class LandingPage extends React.Component {
 						<h3 className='start-h3'>Start Living With Intent Today</h3>
 					</header>
 				</div>
+				<p className='beta'>This app is still in beta testing. Click Dashboard above to try it!</p>
 				<section className='start-section'>
-					<form className='signup-form'>
+					<form 
+						className='signup-form'
+						onSubmit={this.handleSubmit}
+					>
 						<div className='form-container'>
 							<div className='item'>
 								<label htmlFor='first-name'>First name:</label>

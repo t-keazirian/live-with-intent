@@ -153,6 +153,10 @@ div.footer {
 	background-color: #4a4a48;
 }
 
+p.beta {
+  text-align: center;
+}
+
 p.footer-p {
 	padding: 5px;
 }
