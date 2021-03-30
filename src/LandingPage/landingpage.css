@@ -2,14 +2,23 @@ header.main-header {
   padding-top: 30px;
 }
 
-div.landing-page {
+input#first-name, input#last-name, input#username, input#password {
+  margin-bottom: 8px;
+}
+
+form.signup-form, h3.start-h3 {
   text-align: center;
 }
 
-@media all and (min-width: 800px) {
+h3.start-h3 {
+  color: rgb(164, 194, 165);
+  font-weight: 900;
+}
+
+@media all and (min-width: 600px) {
   div.landing-page {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     margin-left: 150px;
     margin-right: 150px;
   }

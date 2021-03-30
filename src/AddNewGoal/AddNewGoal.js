@@ -116,6 +116,7 @@ class AddNewGoal extends React.Component {
 				<header>
 					<h1 className="addgoal">New Goal</h1>
 				</header>
+				<div className='add-goal-div'>
 				<section className="add-goal-section">
 					<form className="add-goal-form" onSubmit={e => this.handleSubmit(e)}>
 						<section className="form-section">
@@ -195,6 +196,7 @@ class AddNewGoal extends React.Component {
 						</div>
 					</form>
 				</section>
+				</div>
 			</div>
 		);
 	}

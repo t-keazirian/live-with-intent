@@ -7,6 +7,7 @@ div.nav {
   padding: 10px;
   background-color: #4A4A48;
   justify-content: space-around;
+  align-items: center;
 }
 
 .homepage-link {

@@ -6,15 +6,20 @@ class LandingPage extends React.Component {
 		return (
 			<div className="landing-page">
 				<header className="main-header">
+					
 					<h1>Live With Intent</h1>
-					<h2 className='intro'>take your goals into your own hands</h2>
+					<h2 className="intro">take your goals into your own hands</h2>
 				</header>
 				<section className="experience-section">
 					<header>
 						<h3>Experience Living With Intention</h3>
 					</header>
 					<p>
-						[<em>Click <strong>Dashboard</strong> above to try it out!</em>]
+						[
+						<em>
+							Click <strong>Dashboard</strong> above to try it out!
+						</em>
+						]
 					</p>
 					<p>
 						Do you have a never ending list of goals or ambitions in your head?
@@ -29,9 +34,9 @@ class LandingPage extends React.Component {
 						<h3>Add your goals</h3>
 					</header>
 					<p>
-						Live With Intent provides
-						you with a simple interface to record your goals, keep track of what
-						you have accomplished, and reflect on your habits.
+						Live With Intent provides you with a simple interface to record your
+						goals, keep track of what you have accomplished, and reflect on your
+						habits.
 					</p>
 				</section>
 				<section className="track-section">
@@ -39,15 +44,14 @@ class LandingPage extends React.Component {
 						<h3>Track your progress</h3>
 					</header>
 					<p>
-						You will start
-						to build confidence as you see yourself completing each new daily or
-						weekly goal. You'll find yourself looking forward to adding in a new
-						goal, and seeing your progress unfold.
+						You will start to build confidence as you see yourself completing
+						each new daily or weekly goal. You'll find yourself looking forward
+						to adding in a new goal, and seeing your progress unfold.
 					</p>
 				</section>
 				<div>
 					<header>
-						<h3>Start Living With Intent Today</h3>
+						<h3 className="start-h3">Start Living With Intent Today</h3>
 					</header>
 				</div>
 				<section className="start-section">

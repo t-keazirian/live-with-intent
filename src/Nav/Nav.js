@@ -10,7 +10,7 @@ class Nav extends React.Component {
 					Live With Intent
 				</Link>
 				<Link className="nav-link" to="/dashboard">
-					Dashboard
+				Dashboard
 				</Link>
 			</div>
 		);

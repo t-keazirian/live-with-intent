@@ -39,7 +39,6 @@ div.note-div {
 
 section.add-goal-section,
 section.edit-goal-section {
-	/* display: flex; */
 	background: rgb(164, 194, 165);
 	border-radius: 10px;
 	color: #f2ebf1;
@@ -50,6 +49,12 @@ section.edit-goal-section {
 
 h2.intro {
 	color: rgb(164, 194, 165);
+}
+
+img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
 }
 
 h4 {
@@ -70,6 +75,7 @@ div.goal-item-info {
 	margin: 10px 20px;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px #566246;
+	padding-top: 10px;
 }
 
 div.goal-item-info {
@@ -94,19 +100,20 @@ select {
 div.button-container {
 	display: flex;
 	align-content: space-around;
-	margin-bottom: 10px;
 }
 
 button {
 	margin: 5px;
-	background-color: #f2b880;
+	background-color: #fbd574;
+
 	color: #4a4a48;
 	cursor: pointer;
 	border-radius: 28px;
 	padding: 10px 20px;
 	font-weight: bolder;
 	border: none;
-	box-shadow: 3px 2px 5px #ea8c34;
+	/* box-shadow: 3px 2px 5px #ea8c34; */
+	box-shadow: 3px 3px 3px #f2b880;
 }
 
 button:disabled {
@@ -133,9 +140,7 @@ a.nav-link {
 
 @media all and (min-width: 600px) {
 	ul {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		width: 50%;
 		justify-content: center;
 	}
 
@@ -143,18 +148,30 @@ a.nav-link {
 		flex-direction: row;
 		align-self: center;
 		padding: 10px;
+    justify-content: space-between;
+	}
+
+	div.goals-list,
+	div.edit-goal-div,
+	div.add-goal-div {
+		display: flex;
+		justify-content: center;
+	}
+
+	section.edit-goal-section,
+	div.add-goal-div {
+		justify-content: center;
 	}
 
 	div.button-container {
-		margin-right: 10px;
 		justify-items: center;
 		align-self: center;
-		margin: 0;
+		padding: 10px;
 	}
 
-	div.goal-item-info {
+	/* div.goal-item-info {
 		width: 50%;
-	}
+	} */
 
 	section.add-goal-section,
 	section.edit-goal-section {
