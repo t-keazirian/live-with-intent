@@ -4,6 +4,8 @@
 
 <img src="/src/images/LandingPageScreen.png" alt="Screenshot of app" />
 
+<img src="/src/images/GoalScreenshot.png" alt="Screenshot of example goal" />
+
 ### This project was created with:
 * React
 * Node
