@@ -52,9 +52,9 @@ h2.intro {
 }
 
 img {
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
+	height: 30px;
+	width: 30px;
+	margin-right: 10px;
 }
 
 h4 {
@@ -105,14 +105,12 @@ div.button-container {
 button {
 	margin: 5px;
 	background-color: #fbd574;
-
 	color: #4a4a48;
 	cursor: pointer;
 	border-radius: 28px;
 	padding: 10px 20px;
 	font-weight: bolder;
 	border: none;
-	/* box-shadow: 3px 2px 5px #ea8c34; */
 	box-shadow: 3px 3px 3px #f2b880;
 }
 
@@ -138,6 +136,27 @@ a.nav-link {
 	color: #f1f2eb;
 }
 
+div.footer-copyright {
+	color: #f1f2eb;
+}
+
+a.github-link:hover {
+	color: #fbd574;
+}
+
+div.footer {
+	text-align: center;
+	/* position:relative; */
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #4a4a48;
+}
+
+p.footer-p {
+	padding: 5px;
+}
+
 @media all and (min-width: 600px) {
 	ul {
 		width: 50%;
@@ -148,7 +167,7 @@ a.nav-link {
 		flex-direction: row;
 		align-self: center;
 		padding: 10px;
-    justify-content: space-between;
+		justify-content: space-between;
 	}
 
 	div.goals-list,
@@ -168,10 +187,6 @@ a.nav-link {
 		align-self: center;
 		padding: 10px;
 	}
-
-	/* div.goal-item-info {
-		width: 50%;
-	} */
 
 	section.add-goal-section,
 	section.edit-goal-section {
