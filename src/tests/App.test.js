@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom';
 import App from '../App';
 import Dashboard from '../Dashboard/Dashboard';
 import { BrowserRouter } from 'react-router-dom';
-import renderer from 'react-test-renderer';
+import TotalGoals from '../TotalGoals/TotalGoals';
+import AddNewGoal from '../AddNewGoal/AddNewGoal';
+import CategoryList from '../CategoryList/CategoryList';
+import Footer from '../Footer/Footer';
+import Goal from '../Goal/Goal';
+import IndvGoal from '../IndvGoal/IndvGoal';
+import LandingPage from '../LandingPage/LandingPage';
+import Nav from '../Nav/Nav';
+import NotFound from '../NotFound/NotFound';
+import UpdateGoal from '../UpdateGoal/UpdateGoal';
 
-describe('App Tests', () => {
-	it('renders without crashing', () => {
+describe('App Test', () => {
+	it('App renders without crashing', () => {
 		const div = document.createElement('div');
 		ReactDOM.render(
 			<BrowserRouter>
@@ -31,3 +40,132 @@ describe('Dashboard', () => {
 	});
 });
 
+describe('Total Goals', () => {
+	it('Total Goals renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<TotalGoals />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Add New Goal', () => {
+	it('Add New Goal renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<AddNewGoal />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Category List', () => {
+	it('Category List renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<CategoryList />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Footer', () => {
+	it('Footer renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<Footer />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Goal', () => {
+	it('Goal renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<Goal />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Indv Goal', () => {
+	it('Indv Goal renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<IndvGoal />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Landing Page', () => {
+	it('Landing Page renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<LandingPage />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Nav', () => {
+	it('Nav renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<Nav />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Not found', () => {
+	it('Not found renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<NotFound />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
+
+describe('Update Goal', () => {
+	it('Update Goal renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<BrowserRouter>
+				<UpdateGoal />
+			</BrowserRouter>,
+			div
+		);
+		ReactDOM.unmountComponentAtNode(div);
+	});
+});
