@@ -38,11 +38,11 @@ class Goal extends React.Component {
 							<h2 className='goals-header'>{oneGoal.goal_name}</h2>
 							<div className='category-div'>
 								<h4>Category:</h4>
-								<p className='category'>{oneGoal.category}</p>
+								<span className='category'>{oneGoal.category}</span>
 							</div>
 							<div className='note-div'>
 								<h4>Notes:</h4>
-								<p className='goal-note'>{oneGoal.notes}</p>
+								<span className='goal-note'>{oneGoal.notes}</span>
 							</div>
 							<div className='date-div'>
 								<h4>Date Added:</h4>
