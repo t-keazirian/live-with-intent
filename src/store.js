@@ -1,3 +1,4 @@
+// dummy data to seed when API is not being used
 const GOALS = [
 	{
 		id: 1,
