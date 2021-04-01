@@ -7,15 +7,18 @@ body {
 	font-family: avenir;
 	height: 100%;
 	background-color: #f1f2eb;
+	margin: 0;
 }
 
 div.app {
 	display: flex;
 	flex-direction: column;
+	min-height: 100vh;
 }
 
 main.main-app {
 	flex: 1 0 auto;
+	margin: 8px;
 }
 
 div.error {
@@ -142,12 +145,12 @@ a.nav-link {
 	color: #f1f2eb;
 }
 
-div.footer-copyright {
-	color: #f1f2eb;
-}
-
 a.github-link:hover {
 	color: #fbd574;
+}
+
+div.footer-copyright {
+	color: #f1f2eb;
 }
 
 div.footer {
@@ -159,15 +162,16 @@ div.footer {
 	background-color: #4a4a48;
 }
 
-p.beta {
-  text-align: center;
-}
-
 p.footer-p {
 	padding: 5px;
 }
 
-@media all and (min-width: 600px) {
+p.beta {
+  text-align: center;
+}
+
+
+@media all and (min-width: 600px) {	
 	ul {
 		width: 50%;
 		justify-content: center;

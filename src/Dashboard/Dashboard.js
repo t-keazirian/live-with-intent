@@ -8,6 +8,13 @@ class Dashboard extends React.Component {
 	static contextType = ApiContext;
 
 	render() {
+		let numOfGoals;
+		if (this.context.goals.length === 0) {
+			numOfGoals = 'Select Add Goal above to start your goal list!';
+		} else {
+			numOfGoals = `Viewing ${this.context.goals.length} Total Goals`;
+		}
+
 		return (
 			<div className='dashboard'>
 				<section className='buttons'>
@@ -17,9 +24,7 @@ class Dashboard extends React.Component {
 				</section>
 				<section className='goal-summary-container'>
 					<div className='goal-summary'>
-						<h3 className='goal-header'>
-							Viewing {this.context.goals.length} Total Goals
-						</h3>
+						<h3 className='goal-header'>{numOfGoals}</h3>
 					</div>
 				</section>
 				<TotalGoals />

@@ -1,18 +1,19 @@
 import React from 'react';
 import './landingpage.css';
+import SignUpForm from '../SignUpForm/SignUpForm';
 
 class LandingPage extends React.Component {
-
-	handleSubmit = (e) => {
+	handleSubmit = e => {
 		e.preventDefault();
-		alert('This app is in beta testing. Click on Dashboard above to try it out!')
-	}
+		alert(
+			'This app is in beta testing. Click on Dashboard above to try it out!'
+		);
+	};
 
 	render() {
 		return (
 			<div className='landing-page'>
 				<header className='main-header'>
-					
 					<h1>Live With Intent</h1>
 					<h2 className='intro'>take your goals into your own hands</h2>
 				</header>
@@ -60,56 +61,11 @@ class LandingPage extends React.Component {
 						<h3 className='start-h3'>Start Living With Intent Today</h3>
 					</header>
 				</div>
-				<p className='beta'>This app is still in beta testing. Click Dashboard above to try it!</p>
+				<p className='beta'>
+					This app is still in beta testing. Click Dashboard above to try it!
+				</p>
 				<section className='start-section'>
-					<form 
-						className='signup-form'
-						onSubmit={this.handleSubmit}
-					>
-						<div className='form-container'>
-							<div className='item'>
-								<label htmlFor='first-name'>First name:</label>
-								<input
-									type='text'
-									name='first-name'
-									id='first-name'
-									placeholder='First Name'
-									required
-								/>
-							</div>
-							<div className='item'>
-								<label htmlFor='last-name'>Last name:</label>
-								<input
-									type='text'
-									name='last-name'
-									id='last-name'
-									placeholder='Last Name'
-									required
-								/>
-							</div>
-							<div className='item'>
-								<label htmlFor='username'>Email:</label>
-								<input
-									type='text'
-									name='username'
-									id='username'
-									placeholder='example@abc.com'
-									required
-								/>
-							</div>
-							<div className='item'>
-								<label htmlFor='password'>Password:</label>
-								<input
-									type='text'
-									name='password'
-									id='password'
-									placeholder='type your password'
-									required
-								/>
-							</div>
-						</div>
-						<button type='submit'>Sign Up</button>
-					</form>
+					<SignUpForm />
 				</section>
 			</div>
 		);

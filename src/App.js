@@ -11,10 +11,6 @@ import UpdateGoal from './UpdateGoal/UpdateGoal';
 import Goal from './Goal/Goal';
 import ApiContext from './Context/ApiContext';
 import config from './config';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-
-library.add(fab)
 
 class App extends React.Component {
 	constructor() {
@@ -87,6 +83,7 @@ class App extends React.Component {
 							<Nav />
 						</nav>
 						<Switch>
+						
 							<Route exact path='/' component={LandingPage} />
 
 							<Route path='/dashboard' component={Dashboard} />

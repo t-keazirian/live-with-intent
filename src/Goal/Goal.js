@@ -3,6 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import ApiContext from '../Context/ApiContext';
 import config from '../config';
 import Moment from 'react-moment';
+import { categories } from '../constants/categories';
 
 class Goal extends React.Component {
 	static contextType = ApiContext;
@@ -38,7 +39,7 @@ class Goal extends React.Component {
 							<h2 className='goals-header'>{oneGoal.goal_name}</h2>
 							<div className='category-div'>
 								<h4>Category:</h4>
-								<span className='category'>{oneGoal.category}</span>
+								<span className='category'>{categories[oneGoal.category]}</span>
 							</div>
 							<div className='note-div'>
 								<h4>Notes:</h4>
@@ -46,9 +47,7 @@ class Goal extends React.Component {
 							</div>
 							<div className='date-div'>
 								<h4>Date Added:</h4>
-							<Moment format='dddd MMM D YYYY'>
-								{oneGoal.post_date}
-							</Moment>
+								<Moment format='dddd MMM D YYYY'>{oneGoal.post_date}</Moment>
 							</div>
 							<div className='button-container'>
 								<Link to={`/edit-goal/${oneGoal.id}`}>

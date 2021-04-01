@@ -92,32 +92,6 @@ describe('Footer', () => {
 	});
 });
 
-describe('Goal', () => {
-	it('Goal renders without crashing', () => {
-		const div = document.createElement('div');
-		ReactDOM.render(
-			<BrowserRouter>
-				<Goal />
-			</BrowserRouter>,
-			div
-		);
-		ReactDOM.unmountComponentAtNode(div);
-	});
-});
-
-describe('Indv Goal', () => {
-	it('Indv Goal renders without crashing', () => {
-		const div = document.createElement('div');
-		ReactDOM.render(
-			<BrowserRouter>
-				<IndvGoal />
-			</BrowserRouter>,
-			div
-		);
-		ReactDOM.unmountComponentAtNode(div);
-	});
-});
-
 describe('Landing Page', () => {
 	it('Landing Page renders without crashing', () => {
 		const div = document.createElement('div');
@@ -150,19 +124,6 @@ describe('Not found', () => {
 		ReactDOM.render(
 			<BrowserRouter>
 				<NotFound />
-			</BrowserRouter>,
-			div
-		);
-		ReactDOM.unmountComponentAtNode(div);
-	});
-});
-
-describe('Update Goal', () => {
-	it('Update Goal renders without crashing', () => {
-		const div = document.createElement('div');
-		ReactDOM.render(
-			<BrowserRouter>
-				<UpdateGoal />
 			</BrowserRouter>,
 			div
 		);
