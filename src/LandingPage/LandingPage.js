@@ -3,12 +3,6 @@ import './landingpage.css';
 import SignUpForm from '../SignUpForm/SignUpForm';
 
 class LandingPage extends React.Component {
-	handleSubmit = e => {
-		e.preventDefault();
-		alert(
-			'This app is in beta testing. Click on Dashboard above to try it out!'
-		);
-	};
 
 	render() {
 		return (

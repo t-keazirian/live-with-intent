@@ -1,6 +1,14 @@
 import React from 'react';
 
 class SignUpForm extends React.Component {
+	handleSubmit = e => {
+		e.preventDefault();
+		alert(
+			'This app is in beta testing. Click on Dashboard above to try it out!'
+		);
+		e.target.reset();
+	};
+
 	render() {
 		return (
 			<form className='signup-form' onSubmit={this.handleSubmit}>
