@@ -7,12 +7,9 @@ import TotalGoals from '../TotalGoals/TotalGoals';
 import AddNewGoal from '../AddNewGoal/AddNewGoal';
 import CategoryList from '../CategoryList/CategoryList';
 import Footer from '../Footer/Footer';
-import Goal from '../Goal/Goal';
-import IndvGoal from '../IndvGoal/IndvGoal';
 import LandingPage from '../LandingPage/LandingPage';
 import Nav from '../Nav/Nav';
 import NotFound from '../NotFound/NotFound';
-import UpdateGoal from '../UpdateGoal/UpdateGoal';
 
 describe('App Test', () => {
 	it('App renders without crashing', () => {
